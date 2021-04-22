@@ -7,6 +7,8 @@ OpenTelemetry Collectors deployed:
 - The Collector sends the data to the appropriate backend, in this demo
  Jaeger, Zipkin, and Cloud Trace;
 
+ The goal is to show how opentelemetry uses different app (Go, Java), receivers and exporters.
+
 This demo uses `docker-compose` and by default runs against the 
 `otel/opentelemetry-collector-contrib` image. To run the demo, switch
 to the `examples/demo` folder and run:
@@ -17,6 +19,8 @@ docker-compose up -d
 
 The demo exposes the following backends:
 
+- Java at http://localhost:8081
+- Golang - traces generated using jaeger-emitter and zipkin-emitter
 - Jaeger at http://localhost:16686
 - Zipkin at http://localhost:9411
 - Cloud Trace https://console.cloud.google.com/traces
