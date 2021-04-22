@@ -1,0 +1,84 @@
+version: "2"
+services:
+
+  # Jaeger
+  jaeger-all-in-one:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "16686:16686"
+      - "14268"
+      - "14250"
+
+  # Zipkin
+  zipkin-all-in-one:
+    image: openzipkin/zipkin:latest
+    ports:
+      - "9411:9411"
+
+  # Collector
+  otel-collector:
+    image: ${OTELCOL_IMG}
+    command: ["--config=/etc/otel-collector-config.yaml", "${OTELCOL_ARGS}"]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+      - ./ingka-ilo-goes-dev-lasse.json:${GOOGLE_APPLICATION_CREDENTIALS} # TO DO -> UPDATE IT !
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}
+    ports:
+      - "1888:1888"   # pprof extension
+      - "13133:13133" # health_check extension
+      - "4317"        # OTLP gRPC receiver
+      - "9411"        # Zipkin receiver
+      - "14250"       # Jaeger grpc receiver
+      - "14268"       # Jaeger http thrift receiver
+      - "55678"       # OpenCensus receiver
+      - "55670:55679" # zpages extension
+    depends_on:
+      - jaeger-all-in-one
+      - zipkin-all-in-one
+
+  # Expose the frontend on http://localhost:8081
+  frontend:
+    image: openzipkin/example-sleuth-webmvc
+    command: Frontend
+    environment:
+      JAVA_OPTS: -Dspring.zipkin.baseUrl=http://otel-collector:9411/api/v2/spans
+    ports:
+      - 8081:8081
+    depends_on:
+      - otel-collector
+
+  # Expose the backend on http://localhost:9000
+  backend:
+    image: openzipkin/example-sleuth-webmvc
+    command: Backend
+    environment:
+      JAVA_OPTS: -Dspring.zipkin.baseUrl=http://otel-collector:9411/api/v2/spans
+    ports:
+      - 9000:9000
+    depends_on:
+      - otel-collector
+
+  # Synthetic load generators
+  jaeger-emitter:
+    image: omnition/synthetic-load-generator:1.0.25
+    environment:
+      - JAEGER_COLLECTOR_URL=http://otel-collector:14268
+    depends_on:
+      - otel-collector
+
+  zipkin-emitter:
+    image: omnition/synthetic-load-generator:1.0.25
+    environment:
+      - ZIPKINV2_JSON_URL=http://otel-collector:9411/api/v2/spans
+    depends_on:
+      - otel-collector
+
+  metrics-load-generator:
+    build:
+      dockerfile: $PWD/app/Dockerfile
+      context: ./app
+    environment:
+      - OTEL_AGENT_ENDPOINT=otel-collector:4317
+    depends_on:
+      - otel-collector
