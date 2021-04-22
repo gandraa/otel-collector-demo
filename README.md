@@ -1,5 +1,7 @@
 # OpenTelemetry Collector Contributions Demo 
 
+*IMPORTANT:* GOOGLE_APPLICATION_CREDENTIALS has to be set in docker-compose file.
+
 This demo presents the typical flow of observability data with multiple
 OpenTelemetry Collectors deployed:
 
