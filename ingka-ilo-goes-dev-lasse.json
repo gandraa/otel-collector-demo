@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ingka-ilo-goes-dev",
+  "private_key_id": "f5a37f3fa4ae56801432a181e60558bb1ccaf1a1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC3zG3kofgKLe1X\nc956Nbl5wUEjbVxJDYiTEQsL+/r/B+mGLrLMiyx/fRQOt/srGk112NCBDGhG9KIi\nPBVD77oKn/pk+eaEWcF/1yMv9dau5ol+JeFpXyhs4kgHewyhYB3wuVWQqShJA3Ab\nWCO+3CDpbncxvT98BQl4crbOxQqVzD+kIwRENfDx6mRfjQHznNIq7hP2jMJNNCM4\nC6A4sMxG8pN1itkI5s7j05KoKPCoJXFZfqA3Im7aIVek8YTOqksBp/BfY2rLI32F\n1D64Kcr9DR5IGNvSgip2y1b6rKDhFboVrcSsAwC6sipdxS3Bt8bt2oWDLQTcgSjb\n+cX/+xb5AgMBAAECggEAEtXEPTXL8V8bf2bEWcm/pBaF0leWqXXVlRyeATBlXFU3\nPSTz9bodaUMsFwYLmzMq1PTPCSp4VS0koFV/6GJcslIKmuZxFQcNqUgmtvd+dJXz\naRYAr4es4NuffgTCGpd6+fxEJHrxQeo0RtkVcK2mQcWsOVCnfNIXUlyPF0lh+E+1\nkJOOmiiisIb20l3ekM6Ny/kGGCthCbWXRsI1xDyFoXwxZ6hjdndGEcWKFhu8eMFx\n5OyDMKzpAJJfijEjsLSSRY4mJ0/2e74Uu5XKPTD8W1JDwku95LLLAbIuwON6T5U/\nwhDNA94z3/WiwS2efCqf4PhKeYMhXmwkTiBMrxDOwQKBgQDZF5YfB+wOpj7YauF7\nAoJGOsvD/Ml+N9dfpTTiMcMCmJ9GRLJeHpZu/MsxN1oTlh+as83hO+KSJ3+fdiUr\nh4JhNL63bTceE2WI71XF7a8Zb0MfY2ZHX1J+d+FJCV6hVzIF8Nh02CoCEIq40wZz\nK5lxGfnMP5E9hnSj2vSHuIdx/QKBgQDYvUxuZQcRq4MDmGX26BCwb1ckK7ehz+M0\n2MRF8EabjtjBr1QrEFPcbphRv98UZh031XmMArd9CqG3GA3W/y3mD19mLKQ5+ZaZ\nf635NgBaLQWlrRB+yD1Ayh0dh7WOl8f6nKea+Hh9cE9Jo7x0YaA9S4/ISkGO3Ma8\natATdXD7rQKBgAbo70hRkjvtIrb0v/SQYeEmYfH9C9TOpjZPJd3FQ7XDcd5ktWC1\njIg/15/baSySbLMZ4gW3SEDqrO9AbXJzP70kVqWz/jsg1uyC4bIJHLesiPBo04qW\nCCQqYKtYdwCfq+HwhpNBhiTGrgOwA9aKnrmw3/iWVWMl8nR8tafUQctpAoGAfHbA\npIiptZD7rJ3guBhuNRPLQ/9C9c5PGLL+i3c+5Of0O822lQBMWEK+f/uiXLGDR+P0\nZ93LhygK0/0hPXzO29WqIB+0s4JL5Jw4yOsk6qP+ITUwSs4str8aVzHuphMtiRJb\nAZh8gPR048H+YAsMHQb+a7OQ0Dyid+MS2InRtwUCgYAq47qqv3rYGBUQ06KRP8UM\nmgG20aeqXcqu/0DU2imQjG78foJv4On7WyN7UMzGGh8wqtXLPg8BAM23R8rYRrGT\neofitCSXyfEQ7qa/vsAOqUixNCkNFZrDEG9bUCcDUC3EVPxVB9iOv3U1rLNg5U2R\nzkPp5dti74t37V3820zT+Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "lasse-dev-sa@ingka-ilo-goes-dev.iam.gserviceaccount.com",
+  "client_id": "117466649458812669640",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/lasse-dev-sa%40ingka-ilo-goes-dev.iam.gserviceaccount.com"
+}
