@@ -21,7 +21,7 @@ services:
     command: ["--config=/etc/otel-collector-config.yaml", "${OTELCOL_ARGS}"]
     volumes:
       - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
-      - ./ingka-ilo-goes-dev-lasse.json:${GOOGLE_APPLICATION_CREDENTIALS} # TO DO -> UPDATE IT !
+      - ../keys/ingka-ilo-goes-dev-lasse.json:${GOOGLE_APPLICATION_CREDENTIALS} # TO DO -> UPDATE IT !
     environment:
       - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}
     ports:
