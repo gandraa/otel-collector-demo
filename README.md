@@ -12,8 +12,7 @@ OpenTelemetry Collectors deployed:
  The goal is to show how opentelemetry uses different app (Go, Java), receivers and exporters.
 
 This demo uses `docker-compose` and by default runs against the 
-`otel/opentelemetry-collector-contrib` image. To run the demo, switch
-to the `examples/demo` folder and run:
+`otel/opentelemetry-collector-contrib` image. To run the demo, execute the docker-compose following command:
 
 ```shell
 docker-compose up -d
